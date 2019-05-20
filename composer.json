@@ -1,0 +1,27 @@
+{
+  "name": "nupods/kernl-lib",
+  "homepage": "https://assets.provost.northeastern.edu/kernl",
+  "authors": [
+    {
+      "name": "NU PODS",
+      "email": "provost-digital@northeastern.edu"
+    }
+  ],
+  "support": {
+    "documentation": "https://assets.provost.northeastern.edu/kernl"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kernl\\": "src/"
+    }
+  },
+  "require": {},
+  "require-dev": {
+    "squizlabs/php_codesniffer": "~3.0"
+  },
+  "scripts": {
+    "test": [
+      "phpcs src --extensions=php --standard=PSR2"
+    ]
+  }
+}
