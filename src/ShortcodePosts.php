@@ -201,11 +201,11 @@ class ShortcodePosts
 
                 // Conditional for column wrapper
                 if ($this->parameters['hide_column']) {
-                    $output .= \Kernl\Utility::getTemplate($this->parameters['template'], $data);
+                    $output .= Utility::getTemplate($this->parameters['template'], $data);
                 } else {
                     $output .= '
                     <div class="col '. $this->parameters['column_class'] .'">
-                        '. \Kernl\Utility::getTemplate($this->parameters['template'], $data) .'
+                        '. Utility::getTemplate($this->parameters['template'], $data) .'
                     </div>';
                 }
             }

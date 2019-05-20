@@ -64,7 +64,7 @@ class ShortcodeComponent
                         . ($this->parameters['pretitle'] ? $this->parseField($this->parameters['pretitle'], '__pretitle') : '')
                         . ($this->parameters['title'] ? $this->parseField($this->parameters['title'], '__title', 'h2') : '')
                         . ($this->parameters['subtitle'] ? $this->parseField($this->parameters['subtitle'], '__subtitle') : '')
-                            . do_shortcode(\Kernl\Utility::removeEmptyParagraphs($content))
+                            . do_shortcode(Utility::removeEmptyParagraphs($content))
                     . '</div>'
 
                     . ($this->parameters['footer'] ?
@@ -101,7 +101,7 @@ class ShortcodeComponent
                         . ($this->parameters['pretitle'] ? $this->parseField($this->parameters['pretitle'], '__pretitle') : '')
                         . ($this->parameters['title'] ? $this->parseField($this->parameters['title'], '__title', 'h2') : '')
                         . ($this->parameters['subtitle'] ? $this->parseField($this->parameters['subtitle'], '__subtitle') : '')
-                            . do_shortcode(\Kernl\Utility::removeEmptyParagraphs($content))
+                            . do_shortcode(Utility::removeEmptyParagraphs($content))
                     . '</div>'
 
                     . ($this->parameters['footer'] ?

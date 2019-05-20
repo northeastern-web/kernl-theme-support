@@ -20,7 +20,7 @@ class Masthead extends \Walker_Nav_Menu
     {
         $title = $item->title . ($item->target ? ' <i class="--sm" data-feather="external-link"></i>' : '');
         $target = 'target="_blank" rel="noopener"';
-        $is_megamenu = (strpos(\Kernl\Masthead::getClass(), '--megamenu') !== false) ? true : false;
+        $is_megamenu = (strpos(Masthead::getClass(), '--megamenu') !== false) ? true : false;
         $link = '<a class="__link" href="'. $item->url .'" '. ($item->target ? $target : '') .'>'
             . $title .
         '</a>';
@@ -82,7 +82,7 @@ class Masthead extends \Walker_Nav_Menu
         }
 
         // Check if specific page is an overlay
-        if (get_field('bool_masthead_overylay', $option) || \Kernl\Layout::getParentValues('bool_masthead_overylay')) {
+        if (get_field('bool_masthead_overylay', $option) ||  Layout::getParentValues('bool_masthead_overylay')) {
             $class .= ' --overlay';
         }
 
@@ -101,7 +101,7 @@ class Masthead extends \Walker_Nav_Menu
         }
 
         if (get_field('bool_masthead_overylay', $option)
-            || \Kernl\Layout::getParentValues('bool_masthead_overylay')) {
+            ||  Layout::getParentValues('bool_masthead_overylay')) {
             $logo = get_field('med_logo_white', 'option');
         }
 

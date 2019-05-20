@@ -35,7 +35,7 @@ class ShortcodeModule
                 $data['type'] = $this->parameters['type'];
                 $data['class'] = $this->parameters['class'];
                 $data['module'] = get_post($this->parameters['id']);
-                return \Kernl\Utility::getTemplate('module/'. $this->parameters['type'], $data);
+                return Utility::getTemplate('module/'. $this->parameters['type'], $data);
             }
 
             return 'No module ID specified';

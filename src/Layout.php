@@ -55,7 +55,7 @@ class Layout
             $subnav = '
                 <nav class="nav --tabbed">
                     <ul class="__list" role="tablist">'
-                        . \Kernl\Navigation::display('top', 1, 0, $nav_parent) .
+                        . Navigation::display('top', 1, 0, $nav_parent) .
                     '</ul>
                 </nav>
             ';
