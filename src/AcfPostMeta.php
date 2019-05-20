@@ -28,13 +28,13 @@ class AcfPostMeta
                 ->addTrueFalse('bool_nunews', ['label' => 'Is News@Northeastern article?', 'wrapper' => ['width' => '20'], 'ui' => true]);
 
             // Boolean for author
-            $field_hide_author = new FieldsBuilder('hide_author');
-            $field_hide_author->addTrueFalse('bool_hide_author', ['label' => 'Hide Author on Post', 'wrapper' => ['width' => '20'], 'ui' => true]);
+            $field_show_author = new FieldsBuilder('show_author');
+            $field_show_author->addTrueFalse('bool_show_author', ['label' => 'Show Author on Post', 'wrapper' => ['width' => '20'], 'ui' => true]);
 
             // Boolean to show author
             $field_override_author = new FieldsBuilder('override_author');
             $field_override_author->addTrueFalse('bool_override_author', ['label' => 'Override Author', 'wrapper' => ['width' => '20'], 'ui' => true])
-                ->conditional('bool_hide_author', '!=', '1')
+                ->conditional('bool_show_author', '!=', '1')
                     ->or('bool_nunews', '!=', '1');
 
             // Text field for author name
@@ -61,7 +61,7 @@ class AcfPostMeta
                 'title' => 'Post Meta'
             ]);
             $builder
-                ->addFields($field_hide_author)
+                ->addFields($field_show_author)
                 ->addFields($field_nunews)
                 ->addFields($field_override_author)
                 ->addFields($field_author)
