@@ -12,7 +12,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Kernl\\": "src/"
+      "Kernl\\Lib\\": "src/"
     }
   },
   "require": {},

@@ -1,6 +1,6 @@
 <?php
 
-namespace Kernl;
+namespace Kernl\Lib;
 
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
