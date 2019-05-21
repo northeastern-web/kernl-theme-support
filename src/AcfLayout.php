@@ -572,9 +572,16 @@ class AcfLayout
             // Add section fields
             $sections
                 ->addFields($fields_sections)
-                ->setLocation('post_type', '==', 'page')
-                    ->or('post_type', '==', 'article')
-                    ->or('options_page', '==', 'acf-options-homepage');
+                ->setLocation('options_page', '==', 'acf-options-homepage');
+
+            // Setup loop for Customized layout options (defaults to 'page' post_type)
+            if (get_field('opt_post_sections', 'option')) {
+                foreach (get_field('opt_post_sections', 'option') as $posttype) {
+                    $sections->getLocation()->or('post_type', '==', $posttype);
+                }
+            } else {
+                $sections->getLocation()->or('post_type', '==', 'page');
+            }
 
             // Build sections field group
             acf_add_local_field_group($sections->build());

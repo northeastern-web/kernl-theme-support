@@ -47,10 +47,10 @@ class AcfCustomize
                             ['+border' => 'Bordered'],
                             ['+chevron' => 'Chevron'],
                         ])
-                    ->addTextarea('txt_css', ['label' => 'Add Global CSS', 'wrapper' => ['width' => '100'], 'rows' => 15])
+                    ->addTextarea('txt_css', ['label' => 'Add Global CSS', 'wrapper' => ['width' => '100'], 'rows' => 15, 'class' => 'kernl--code'])
                 ->addMessage('Global Items', '')
-                    ->addTextarea('txt_head', ['label' => 'Add Global items to head', 'wrapper' => ['width' => '100'], 'rows' => 15])
-                    ->addTextarea('txt_footer', ['label' => 'Add Global items to footer', 'wrapper' => ['width' => '100'], 'rows' => 15]);
+                    ->addTextarea('txt_head', ['label' => 'Add Global items to head', 'wrapper' => ['width' => '100'], 'rows' => 15, 'class' => 'kernl--code'])
+                    ->addTextarea('txt_footer', ['label' => 'Add Global items to footer', 'wrapper' => ['width' => '100'], 'rows' => 15, 'class' => 'kernl--code']);
 
             $post_types = [];
             foreach (get_post_types(['public' => true]) as $type) {
@@ -58,8 +58,8 @@ class AcfCustomize
             }
             $layout = new FieldsBuilder('layout');
             $layout->addTab('Layout')
-                ->addMessage('Add layout to the following post types', '')
-                ->addSelect('opt_posts', [
+                ->addMessage('Add section layout to the following post types', '')
+                ->addSelect('opt_post_sections', [
                     'label' => 'Select Post Types',
                     'allow_null' => 1,
                     'multiple' => 1,
