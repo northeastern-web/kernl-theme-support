@@ -60,4 +60,15 @@ class Utility
         // Return single day format
         return $start_date;
     }
+
+    /**
+     * Get Global contain class
+     * @return string
+     */
+    public static function getGlobalContain()
+    {
+        $output = (get_field('bool_global_contain', 'option') ? 'contain' : '');
+        $output .= (get_field('bool_global_contain_body', 'option') ? ' --body' : '');
+        return $output;
+    }
 }
