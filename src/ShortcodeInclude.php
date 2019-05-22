@@ -76,7 +76,7 @@ class ShortcodeInclude
             });
 
             add_filter("mce_external_plugins", function ($plugin_array) {
-                $file = get_stylesheet_directory_uri() . '/../vendor/nupods/kernl-lib/src/assets/scripts/tinymce-include.js';
+                $file = get_stylesheet_directory_uri() . '/../vendor/nupods/kernl-lib-wp/src/assets/scripts/tinymce-include.js';
                 $plugin_array['add_script'] = $file;
                 return $plugin_array;
             });
