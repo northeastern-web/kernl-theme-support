@@ -30,16 +30,15 @@ class AcfCustomize
                 ->addMessage('Google Analytics (applied in Production only)', '')
                     ->addText('txt_analytics', ['label' => 'GA Tracker'])
                 ->addMessage('Global Styles', '')
-                    ->addTrueFalse('bool_global_contain', ['label' => 'Contain document/page width', 'wrapper' => ['width' => '33'], 'ui' => 1])
-                    ->addTrueFalse('bool_chrome_header', ['label' => 'Add brand header', 'wrapper' => ['width' => '33'], 'ui' => 1])
-                    ->addTrueFalse('bool_chrome_footer', ['label' => 'Add brand footer', 'wrapper' => ['width' => '33'], 'ui' => 1])
+                    ->addTrueFalse('bool_chrome_header', ['label' => 'Add brand header', 'wrapper' => ['width' => '25'], 'ui' => 1])
+                    ->addTrueFalse('bool_chrome_footer', ['label' => 'Add brand footer', 'wrapper' => ['width' => '25'], 'ui' => 1])
                     ->addSelect('opt_masthead', [
                         'label' => 'Masthead Options',
                         'allow_null' => 1,
                         'multiple' => 1,
                         'return_format' => 'value',
                         'ui' => 1,
-                        'wrapper' => ['width' => '66']
+                        'wrapper' => ['width' => '100']
                     ])
                         ->addChoices([
                             ['bg--black' => 'Black'],
@@ -47,6 +46,9 @@ class AcfCustomize
                             ['+border' => 'Bordered'],
                             ['+chevron' => 'Chevron'],
                         ])
+                    ->addTrueFalse('bool_global_contain', ['label' => 'Contain document/page width', 'wrapper' => ['width' => '25'], 'ui' => 1])
+                    ->addTrueFalse('bool_global_contain_body', ['label' => 'Apply contain to body only', 'wrapper' => ['width' => '25'], 'ui' => 1])
+                        ->conditional('bool_global_contain', '==', '1')
                     ->addTextarea('txt_css', ['label' => 'Add Global CSS', 'wrapper' => ['width' => '100'], 'rows' => 15, 'class' => 'kernl--code'])
                 ->addMessage('Global Items', '')
                     ->addTextarea('txt_head', ['label' => 'Add Global items to head', 'wrapper' => ['width' => '100'], 'rows' => 15, 'class' => 'kernl--code'])
