@@ -80,7 +80,7 @@ class Config
             add_theme_support('title-tag');
 
             // Add supported post formats
-            add_theme_support('post-formats', ['gallery', 'video']);
+            // add_theme_support('post-formats', ['gallery', 'video']);
 
             // Register navigation menus
             register_nav_menus([
