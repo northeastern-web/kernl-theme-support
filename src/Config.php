@@ -144,8 +144,18 @@ class Config
 
         // wp_head
         add_action('wp_head', function () {
+            // Add tag manager Script
+            if (\WP_ENV == 'production') {
+                echo NU::gtmScript();
+            }
+
+            // Add chrome style
+            if (get_field('bool_chrome_header', 'option') || get_field('bool_chrome_footer', 'option')) {
+                echo '<link rel="stylesheet" href="' .NU::chromeStyle(). '">';
+            }
+
             // Marketing's favicons
-            echo \Kernl\Lib\NU::headMeta();
+            echo NU::headMeta();
 
             // Add items globally to <head> from Customize
             if (get_field('txt_head', 'option')) {
@@ -160,6 +170,24 @@ class Config
                     </style>
                 ';
             }
+        }, 1);
+
+        // wp_body_open
+        add_action('wp_body_open', function () {
+            // Add tag manager NoScript
+            if (\WP_ENV == 'production') {
+                echo NU::gtmNoScript();
+            }
+
+            // Add skip to main content
+            echo '
+                <a class="skip alert" href="#main_content">Skip to main content</a>
+                <!--[if IE]>
+                <div class="bg--beige fs--sm pa--1 pa--2@d">
+                    <b><i>Note</i></b>: You are using an <strong>outdated</strong> browser. Please <a class="tc--red" href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+                </div>
+                <![endif]-->
+            ';
         });
 
         // wp_footer
@@ -167,6 +195,16 @@ class Config
             // Add items globally to footer area from Customize
             if (get_field('txt_footer', 'option')) {
                 echo get_field('txt_footer', 'option');
+            }
+
+            // Add chrome script
+            if (get_field('bool_chrome_header', 'option') || get_field('bool_chrome_footer', 'option')) {
+                echo '<script src="' .NU::chromeScript(). '"></script>';
+            }
+
+            // Add google analytics tracker
+            if (\WP_ENV == 'production' && get_field('txt_analytics', 'option')) {
+                echo NU::googleAnalytics(get_field('txt_analytics', 'option'));
             }
         });
     }
