@@ -69,6 +69,6 @@ class Utility
     {
         $output = (get_field('bool_global_contain', 'option') ? 'contain' : '');
         $output .= (get_field('bool_global_contain_body', 'option') ? ' --body' : '');
-        return $output;
+        return ($output ? 'class="' .$output. '"' : '');
     }
 }
