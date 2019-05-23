@@ -142,21 +142,27 @@ class Config
         // Template Actions //
         //////////////////////
 
-        // wp_head
+        // wp_head items with priority 1
         add_action('wp_head', function () {
             // Add tag manager Script
             if (\WP_ENV == 'production') {
                 echo NU::gtmScript();
             }
 
+            // Marketing's favicons
+            echo NU::headMeta();
+
+            // Add Lato font
+            echo '<link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900" rel="stylesheet">';
+
             // Add chrome style
             if (get_field('bool_chrome_header', 'option') || get_field('bool_chrome_footer', 'option')) {
                 echo '<link rel="stylesheet" href="' .NU::chromeStyle(). '">';
             }
+        }, 1);
 
-            // Marketing's favicons
-            echo NU::headMeta();
-
+        // wp_head with priority 20
+        add_action('wp_head', function () {
             // Add items globally to <head> from Customize
             if (get_field('txt_head', 'option')) {
                 echo get_field('txt_head', 'option');
@@ -170,7 +176,7 @@ class Config
                     </style>
                 ';
             }
-        }, 1);
+        }, 20);
 
         // wp_body_open
         add_action('wp_body_open', function () {
