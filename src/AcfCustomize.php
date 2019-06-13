@@ -45,6 +45,7 @@ class AcfCustomize
                             ['--megamenu' => 'Megamenu'],
                             ['+border' => 'Bordered'],
                             ['+chevron' => 'Chevron'],
+                            ['--logo-lg' => 'Larger Logo'],
                         ])
                     ->addTrueFalse('bool_global_contain', ['label' => 'Contain document/page width', 'wrapper' => ['width' => '25'], 'ui' => 1])
                     ->addTrueFalse('bool_global_contain_body', ['label' => 'Apply contain to body only', 'wrapper' => ['width' => '25'], 'ui' => 1])
