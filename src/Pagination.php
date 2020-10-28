@@ -1,6 +1,6 @@
 <?php
 
-namespace Kernl\Lib;
+namespace Kernl\Support\Theme;
 
 class Pagination
 {

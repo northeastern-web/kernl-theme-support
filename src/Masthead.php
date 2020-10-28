@@ -1,6 +1,6 @@
 <?php
 
-namespace Kernl\Lib;
+namespace Kernl\Support\Theme;
 
 class Masthead extends \Walker_Nav_Menu
 {
