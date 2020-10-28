@@ -146,18 +146,18 @@ class Config
         add_action('wp_head', function () {
             // Add tag manager Script
             if (\WP_ENV == 'production') {
-                echo NU::gtmScript();
+                // echo NU::gtmScript();
             }
 
             // Marketing's favicons
-            echo NU::headMeta();
+            // echo NU::headMeta();
 
             // Add Lato font
             echo '<link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900" rel="stylesheet">';
 
             // Add chrome style
             if (get_field('bool_chrome_header', 'option') || get_field('bool_chrome_footer', 'option')) {
-                echo '<link rel="stylesheet" href="' .NU::chromeStyle(). '">';
+                // echo '<link rel="stylesheet" href="' .NU::chromeStyle(). '">';
             }
         }, 1);
 
@@ -182,7 +182,7 @@ class Config
         add_action('wp_body_open', function () {
             // Add tag manager NoScript
             if (\WP_ENV == 'production') {
-                echo NU::gtmNoScript();
+                // echo NU::gtmNoScript();
             }
 
             // Add skip to main content
@@ -205,12 +205,12 @@ class Config
 
             // Add chrome script
             if (get_field('bool_chrome_header', 'option') || get_field('bool_chrome_footer', 'option')) {
-                echo '<script src="' .NU::chromeScript(). '"></script>';
+                // echo '<script src="' .NU::chromeScript(). '"></script>';
             }
 
             // Add google analytics tracker
             if (\WP_ENV == 'production' && get_field('txt_analytics', 'option')) {
-                echo NU::googleAnalytics(get_field('txt_analytics', 'option'));
+                // echo NU::googleAnalytics(get_field('txt_analytics', 'option'));
             }
         });
     }
