@@ -23,7 +23,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Northeastern\\Support\\Theme\\": "src"
+      "Kernl\\Support\\Theme\\": "src"
     }
   },
   "scripts": {
