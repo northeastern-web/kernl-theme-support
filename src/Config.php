@@ -187,7 +187,7 @@ class Config
 
             // Add skip to main content
             echo '
-                <div x-data="NUGlobalElements.header({ skipToMainSelector: \'#main\' })" x-init="init()" style="height: 48px; background-color: black"></div>
+                <div x-data="NUGlobalElements.header({ wordmark: '. (get_field('bool_wordmark', 'option') ? 'true' : 'false') .', skipToMainSelector: \'#main\' })" x-init="init()" style="height: 48px; background-color: black"></div>
             ';
         });
 

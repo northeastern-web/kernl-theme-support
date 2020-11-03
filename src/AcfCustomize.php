@@ -30,8 +30,7 @@ class AcfCustomize
                 ->addMessage('Google Analytics (applied in Production only)', '')
                     ->addText('txt_analytics', ['label' => 'GA Tracker'])
                 ->addMessage('Global Styles', '')
-                    ->addTrueFalse('bool_chrome_header', ['label' => 'Add brand header', 'wrapper' => ['width' => '25'], 'ui' => 1])
-                    ->addTrueFalse('bool_chrome_footer', ['label' => 'Add brand footer', 'wrapper' => ['width' => '25'], 'ui' => 1])
+                    ->addTrueFalse('bool_wordmark', ['label' => 'Use Wordmark', 'wrapper' => ['width' => '25'], 'ui' => 1])
                     ->addSelect('opt_masthead', [
                         'label' => 'Masthead Options',
                         'allow_null' => 1,
